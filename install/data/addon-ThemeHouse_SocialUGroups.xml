@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ThemeHouse_SocialUGroups" title="[⌂] Social User Groups" version_string="1.0.1c" version_id="1447094555" url="http://www.th.com/" install_callback_class="ThemeHouse_Install" install_callback_method="install" uninstall_callback_class="ThemeHouse_Install" uninstall_callback_method="uninstall">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="controller_pre_dispatch" execute_order="10" callback_class="ThemeHouse_Listener_ControllerPreDispatch" callback_method="controllerPreDispatch" active="1" hint="" description=""/>
+    <listener event_id="file_health_check" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_FileHealthCheck" callback_method="fileHealthCheck" active="1" hint="" description=""/>
+    <listener event_id="init_dependencies" execute_order="10" callback_class="ThemeHouse_Listener_InitDependencies" callback_method="initDependencies" active="1" hint="" description=""/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassDataWriter" active="0" hint="ThemeHouse_SocialGroups_DataWriter_SocialForum" description="ThemeHouse_SocialGroups_DataWriter_SocialForum (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassDataWriter" active="0" hint="ThemeHouse_SocialGroups_DataWriter_SocialForumMember" description="ThemeHouse_SocialGroups_DataWriter_SocialForumMember (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="ThemeHouse_SocialGroups_Model_SocialForum" description="ThemeHouse_SocialGroups_Model_SocialForum (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassModel" active="0" hint="ThemeHouse_SocialGroups_Model_SocialForumMember" description="ThemeHouse_SocialGroups_Model_SocialForumMember (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="20" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassController" active="0" hint="ThemeHouse_SocialGroups_ControllerPublic_SocialForum" description="ThemeHouse_SocialGroups_ControllerPublic_SocialForum (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class" execute_order="20" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassController" active="0" hint="XenForo_ControllerPublic_Thread" description="XenForo_ControllerPublic_Thread (For XenForo 1.2 and above)" compatibility_switch="1"/>
+    <listener event_id="load_class_controller" execute_order="20" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassController" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_datawriter" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassDataWriter" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_LoadClass" callback_method="loadClassModel" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="template_create" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_TemplateCreate" callback_method="templateCreate" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="template_hook" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_TemplateHook" callback_method="templateHook" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+    <listener event_id="template_post_render" execute_order="10" callback_class="ThemeHouse_SocialUGroups_Listener_TemplatePostRender" callback_method="templatePostRender" active="1" hint="" description="(For XenForo 1.1 and below)" compatibility_switch="1"/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions>
+      <permission permission_group_id="forum" permission_id="manageSocialUserGroups" permission_type="flag" default_value="unset" interface_group_id="thSocialGroupsModerator" display_order="1000"/>
+    </permissions>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="permission_forum_manageSocialUserGroups" version_id="0" version_string="1.0.0"><![CDATA[Manage social user groups]]></phrase>
+    <phrase title="th_confirm_deletion_of_social_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Confirm Deletion of Social User Group]]></phrase>
+    <phrase title="th_create_new_social_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Create New Social User Group]]></phrase>
+    <phrase title="th_delete_social_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Delete Social User Group]]></phrase>
+    <phrase title="th_edit_social_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Edit Social User Group]]></phrase>
+    <phrase title="th_manage_social_user_groups_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Manage Social User Groups]]></phrase>
+    <phrase title="th_please_confirm_want_to_delete_social_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Please confirm that you want to delete the following social user group]]></phrase>
+    <phrase title="th_requested_social_user_group_not_found_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Requested social user group not found.]]></phrase>
+    <phrase title="th_social_forum_user_groups_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Social Forum User Groups]]></phrase>
+    <phrase title="th_social_user_group_titles_must_be_unique_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Social user group titles must be unique. The specified title is already in use.]]></phrase>
+    <phrase title="th_social_user_group_title_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[Social User Group Title]]></phrase>
+  </phrases>
+  <route_prefixes>
+    <route_type type="public">
+      <prefix original_prefix="social-user-groups" class="ThemeHouse_SocialUGroups_Route_Prefix_SocialUserGroups" build_link="data_only"/>
+    </route_type>
+  </route_prefixes>
+  <style_properties/>
+  <templates>
+    <template title="th_member_edit_user_group_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[<div class="socialUserGroupEdit editBlock">
+	<label for="ctrl_social_user_group_id_{$user.user_id}">{xen:phrase user_group}:
+		<select name="social_user_group_id" class="textCtrl" id="ctrl_social_user_group_id_{$user.user_id}">
+			<option></option>
+			<xen:foreach loop="$socialUserGroups" key="$socialUserGroupId" value="$socialUserGroup">
+				<option value="{$socialUserGroupId}" {xen:selected "{$user.social_user_group_id} == {$socialUserGroupId}"}>{$socialUserGroup.title}</option>
+			</xen:foreach>
+		</select>
+	</label>
+</div>]]></template>
+    <template title="th_social_forum_tools_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[<xen:if is="{$canManageSocialUserGroups}">
+	<li><a href="{xen:link social-forums/user-groups, $socialForum}">{xen:phrase th_manage_social_user_groups_socialusergroups}</a></li>
+</xen:if>]]></template>
+    <template title="th_social_permissions_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[<input type="hidden" name="social_user_group_id" value="{$socialUserGroupId}" />]]></template>
+    <template title="th_social_user_groups_socialusergroups" version_id="1368834429" version_string="1.0.0"><![CDATA[<xen:title>{xen:phrase th_social_forum_user_groups_socialusergroups}</xen:title>
+
+<xen:topctrl><a href="{xen:link 'social-forums/user-groups/add', $socialForum}" class="callToAction"><span>{xen:phrase th_create_new_social_user_group_socialusergroups}</span></a></xen:topctrl>
+
+<div class="sectionMain">
+<table class="dataTable socialUserGroupsTable">
+
+<colgroup>
+<col style="">
+</colgroup>
+
+<tbody>
+<tr class="dataRow">
+	<th>{xen:phrase th_social_forum_user_groups_socialusergroups}</th>
+</tr>
+<tr class="dataRow">
+	<td>{xen:phrase th_guest_socialgroups}</td>
+</tr>
+<tr class="dataRow">
+	<td>{xen:phrase th_member_socialgroups}</td>
+</tr>
+<tr class="dataRow">
+	<td>{xen:phrase th_moderator_socialgroups}</td>
+</tr>
+<tr class="dataRow">
+	<td>{xen:phrase th_creator_socialgroups}</td>
+</tr>
+<xen:foreach loop="$socialUserGroups" key="$socialUserGroupId" value="$socialUserGroup">
+	<tr class="dataRow">
+		<td><a href="{xen:link social-forums/user-groups/edit, {$socialForum}, 'social_user_group_id={$socialUserGroup.social_user_group_id}'}">{$socialUserGroup.title}</a></td>
+	</tr>
+</xen:foreach>
+</tbody>
+</table>
+</div>]]></template>
+    <template title="th_social_user_group_delete_socialusergroups" version_id="0" version_string=""><![CDATA[<xen:title>{xen:phrase th_confirm_deletion_of_social_user_group_socialusergroups}: {$socialUserGroup.title}</xen:title>
+<xen:h1>{xen:phrase th_confirm_deletion_of_social_user_group_socialusergroups}</xen:h1>
+
+<xen:require css="th_socialusergroups.css" />
+
+<xen:navigation>
+    <xen:breadcrumb href="{xen:link 'social-user-groups/edit', $socialUserGroup}">{$socialUserGroup.title}</xen:breadcrumb>
+</xen:navigation>
+
+<xen:require css="delete_confirmation.css" />
+
+<form action="{xen:link 'social-user-groups/delete', $socialUserGroup}" method="post" class="xenForm formOverlay deleteConfirmForm" id="delete-socialUserGroup">
+
+    <p>{xen:phrase th_please_confirm_want_to_delete_social_user_group_socialusergroups}:</p>
+    <strong><a href="{xen:link 'social-user-groups/edit', $socialUserGroup}">{$socialUserGroup.title}</a></strong>
+
+    <dl class="ctrlUnit submitUnit">
+        <dt></dt>
+        <dd>
+            <input type="submit" value="{xen:phrase th_delete_social_user_group_socialusergroups}" class="button primary" />
+        </dd>
+    </dl>
+
+    <input type="hidden" name="_xfConfirm" value="1" />
+    <input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+</form>]]></template>
+    <template title="th_social_user_group_edit_socialusergroups" version_id="1368834429" version_string="1.0.0"><![CDATA[<xen:title>{xen:if '{$socialUserGroup.social_user_group_id}', '{xen:phrase th_edit_social_user_group_socialusergroups}: {$socialUserGroup.title}', '{xen:phrase th_create_new_social_user_group_socialusergroups}'}</xen:title>
+
+<xen:h1>{xen:if '{$socialUserGroup.social_user_group_id}', '{xen:phrase th_edit_social_user_group_socialusergroups}: <em>{$socialUserGroup.title}</em>', '{xen:phrase th_create_new_social_user_group_socialusergroups}'}</xen:h1>
+
+<xen:if is="{$socialUserGroup.social_user_group_id}">
+    <xen:navigation>
+        <xen:breadcrumb href="{xen:link 'social-forums/user-groups', $socialForum}#{xen:helper listitemid, $socialUserGroup.social_user_group_id}">{$socialUserGroup.title}</xen:breadcrumb>
+    </xen:navigation>
+</xen:if>
+
+<form action="{xen:link 'social-forums/user-groups/save', $socialForum, 'social_user_group_id={$socialUserGroup.social_user_group_id}'}"
+    class="xenForm formOverlay AutoValidator"
+    data-redirect="on">
+
+    <dl class="ctrlUnit">
+        <dt><label for="ctrl_title">{xen:phrase th_social_user_group_title_socialusergroups}:</label></dt>
+        <dd><input type="text" name="title" value="{$socialUserGroup.title}" class="textCtrl" id="ctrl_title" data-liveTitleTemplate="{xen:if {$socialUserGroup.social_user_group_id},
+        '{xen:phrase th_edit_social_user_group_socialusergroups}: <em>%s</em>',
+        '{xen:phrase th_create_new_social_user_group_socialusergroups}: <em>%s</em>'}" maxlength="100" /></dd>
+    </dl>
+
+	<dl class="ctrlUnit {xen:if {$hideLabel}, 'surplusLabel'}">
+		<dt><label for="ctrl_style_override">{xen:phrase style}:</label></dt>
+		<dd>
+			<ul>
+				<li>
+					<label for="ctrl_style_override"><input type="checkbox" name="style_override" value="1" class="Disabler" id="ctrl_style_override" {xen:checked '{$socialUserGroup.style_id}'}> {xen:phrase override_user_style_choice}</label>
+					<p class="hint">{xen:phrase if_specified_all_visitors_view_using_selected_style}</p>
+					<ul id="ctrl_style_override_Disabler">
+						<li>
+							<select name="style_id" class="textCtrl" id="ctrl_style_id">
+							<xen:foreach loop="$styles" key="$styleId" value="$style">
+								<option value="{$styleId}" class="{$style.depthClass}" {xen:selected '{$styleId} == {$socialUserGroup.style_id}'}>{$style.depthPrefix}{$style.title}</option>
+							</xen:foreach>
+							</select>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</dd>
+	</dl>
+
+    <dl class="ctrlUnit submitUnit">
+        <dt></dt>
+        <dd>
+            <input type="submit" value="{xen:phrase save_changes}" accesskey="s" class="button primary" data-ajaxvalue="{xen:phrase save_all_changes}" />
+            <xen:if is="{$socialUserGroup.social_user_group_id}">
+                <input type="button" value="{xen:phrase th_delete_social_user_group_socialusergroups}..." accesskey="d" class="button OverlayTrigger"
+                    data-href="{xen:link 'social-forums/user-groups/delete', $socialForum, 'social_user_group_id={$socialUserGroup.social_user_group_id}'}" />
+            </xen:if>
+        </dd>
+    </dl>
+
+    <input type="hidden" name="_xfToken" value="{$visitor.csrf_token_page}" />
+</form>]]></template>
+    <template title="th_social_user_group_list_item_socialusergro" version_id="0" version_string=""><![CDATA[<xen:require css="discussion_list.css" />
+<xen:require css="th_socialusergroups.css" />
+
+<li id="socialUserGroup-{$socialUserGroup.main_subject_id}" class="discussionListItem">
+    <xen:if is="{$socialUserGroup.canDelete}">
+        <a href="{xen:link 'social-user-groups/delete', $socialUserGroup}" class="delete OverlayTrigger secondaryContent" title="{xen:phrase delete}"><span>{xen:phrase delete}...</span></a>
+    </xen:if>
+    <h4>
+        <a href="{xen:link 'social-user-groups', $socialUserGroup}">
+            <em>{$socialUserGroup.title}</em>
+            <dfn>{$socialUserGroup.subtitle}</dfn>
+        </a>
+    </h4>
+</li>]]></template>
+    <template title="th_social_user_group_popup_socialusergroups" version_id="0" version_string="1.0.0"><![CDATA[<xen:foreach loop="$socialUserGroups" key="$socialUserGroupId" value="$socialUserGroup">
+	<li><a href="{xen:link social-forums/permissions/user-group, $socialForum, 'social_user_group_id={$socialUserGroupId}'}">{$socialUserGroup.title}</a></li>
+</xen:foreach>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="footer" modification_key="th_copyrightNotice_socialUGroups" description="Copyright notice for [⌂] Social User Groups" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+    <modification template="footer" modification_key="th_copyrightNotice_socialUserGroups" description="Copyright notice for [⌂] Social User Groups" execution_order="1" enabled="1" action="callback">
+      <find><![CDATA[/{xen:phrase (?:xenforo|extra)_copyright}/]]></find>
+      <replace><![CDATA[ThemeHouse_Listener_InitDependencies::copyrightNotice]]></replace>
+    </modification>
+    <modification template="th_member_list_item_edit_socialgroups" modification_key="th_memberListItemEdit_socialUserGroups" description="Adds buttons to change a member's user group." execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<div class="memberListItemEdit inlineCtrlGroup">]]></find>
+      <replace><![CDATA[<div class="memberListItemEdit inlineCtrlGroup">
+<xen:include template="th_member_edit_user_group_socialusergroups" />]]></replace>
+    </modification>
+    <modification template="th_social_forum_tools_socialgroups" modification_key="th_socialForumTools_socialUserGroups" description="Adds user groups links to social forum tools drop-down menu." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#(<xen:hook name="th_social_forum_tools_socialgroups">.*)(</xen:hook>)#Us]]></find>
+      <replace><![CDATA[${1}
+<xen:include template="th_social_forum_tools_socialusergroups" />
+${2}]]></replace>
+    </modification>
+    <modification template="th_social_permissions_socialperms" modification_key="th_socialPermissions_socialUserGroups" description="Adds hidden fields for social user groups to social permissions editor." execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<table class="dataTable socialPermissionsTable">]]></find>
+      <replace><![CDATA[<table class="dataTable socialPermissionsTable">
+<xen:include template="th_social_permissions_socialusergroups" />]]></replace>
+    </modification>
+    <modification template="th_social_permissions_socialperms" modification_key="th_socialUserGroupPopup_socialUserGroups" description="Adds social user groups to list of groups in permission editor." execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[#(<xen:hook name="th_social_user_group_popup_socialperms">.*)(</xen:hook>)#Us]]></find>
+      <replace><![CDATA[${1}
+<xen:include template="th_social_user_group_popup_socialusergroups" />
+${2}]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
